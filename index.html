@@ -15,6 +15,16 @@
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>  
 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYFPRER08"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BYYFPRER08');
+</script>
+
 </head>
 
 <body>
@@ -254,6 +264,22 @@ const observer = new IntersectionObserver((entries)=> {
 
 elements.forEach(el => observer.observe(el));</script>
 
+    <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".CTA").forEach(function(element) {
+        element.addEventListener("click", function() {
+          console.log("CTA pressed ✅"); // للتأكد في الـ Console
+          gtag('event', 'cta_click', {
+            'event_category': 'engagement',
+            'event_label': element.innerText,
+            'value': 1
+          });
+        });
+      });
+    });
+  </script>  
+
 </body>
+
 
 </html>
